@@ -5,11 +5,12 @@ let bottomIndex = 0;
 let buttonImage;
 let backgroundImage;
 
-let topButtonX = 550, topButtonY = 300, buttonWidth = 350, buttonHeight = 200;
-let bottomButtonX = 550, bottomButtonY = 550;
+let topButtonX = 600, topButtonY = 270, buttonWidth = 250, buttonHeight = 180;
 
-let topX = 150, topY = 190, topWidth = 400, topHeight = 400;
-let bottomX = 150, bottomY = 500, bottomWidth = 400, bottomHeight = 500;
+let bottomButtonX = 600, bottomButtonY = 550;
+
+let topX = 156, topY = 120, topWidth = 500, topHeight = 450;
+let bottomX = 150, bottomY = 400, bottomWidth = 500, bottomHeight = 600;
 
 let topButtonShrink = false;
 let bottomButtonShrink = false;
@@ -20,9 +21,9 @@ function preload() {
     topImages = [
         loadImage('images/girl.png'),
         loadImage('images/reindeer.png'),
-      loadImage('images/gingerbread.png'),
       loadImage('images/snowman.png'),
-        loadImage('images/santa.png')
+        loadImage('images/santa.png'),
+      loadImage('images/gingerbread.png'),
     ];
     bottomImages = [
         loadImage('images/santa_body.png'),

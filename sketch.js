@@ -38,6 +38,7 @@ function preload() {
 
 function setup() {
   createCanvas(1024, 1024);
+  noSmooth(); // Optional: Ensure sharp rendering on mobile.
 }
 
 function draw() {
@@ -107,7 +108,6 @@ function handleInteraction(x, y) {
   }
 }
 
-
 function triggerButtonShrink(button) {
   if (button === 'top') {
     topButtonShrink = true;
@@ -120,4 +120,14 @@ function triggerButtonShrink(button) {
       bottomButtonShrink = false;
     }, shrinkDuration);
   }
+}
+
+// Ensure proper canvas scaling on mobile
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  adjustLayout(); // Adjust button and image positions if necessary
+}
+
+function adjustLayout() {
+  // Optional: Modify positions and sizes based on screen dimensions.
 }

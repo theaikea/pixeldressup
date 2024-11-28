@@ -9,7 +9,7 @@ let topButtonX = 550, topButtonY = 300, buttonWidth = 350, buttonHeight = 200;
 let bottomButtonX = 550, bottomButtonY = 550;
 
 let topX = 150, topY = 190, topWidth = 400, topHeight = 400;
-let bottomX = 150, bottomY = 500, bottomWidth = 400, bottomHeight = 400;
+let bottomX = 150, bottomY = 500, bottomWidth = 400, bottomHeight = 500;
 
 let topButtonShrink = false;
 let bottomButtonShrink = false;
@@ -18,14 +18,18 @@ let shrinkDuration = 200;
 
 function preload() {
     topImages = [
-        loadImage('images/nissepige.png'),
-        loadImage('images/rensdyr.png'),
-        loadImage('images/julemand.png')
+        loadImage('images/girl.png'),
+        loadImage('images/reindeer.png'),
+      loadImage('images/gingerbread.png'),
+      loadImage('images/snowman.png'),
+        loadImage('images/santa.png')
     ];
     bottomImages = [
-        loadImage('images/julemand_krop.png'),
-        loadImage('images/nissepige_krop.png'),
-        loadImage('images/rensdyr_krop.png')
+        loadImage('images/santa_body.png'),
+        loadImage('images/girl_body.png'),
+      loadImage('images/gingerbread_body.png'),
+      loadImage('images/snowman_body.png'),
+        loadImage('images/reindeer_body.png')
     ];
     buttonImage = loadImage('images/pil.png');
     backgroundImage = loadImage('images/background.png');
@@ -43,7 +47,7 @@ function setup() {
 }
 
 function draw() {
-    image(backgroundImage, 0, 0, width, height);
+    image(backgroundImage, 0, 0, 1024, 1024);
     image(bottomImages[bottomIndex], bottomX, bottomY, bottomWidth, bottomHeight);
     image(topImages[topIndex], topX, topY, topWidth, topHeight);
 

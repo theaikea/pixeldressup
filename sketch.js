@@ -21,15 +21,15 @@ let shrinkDuration = 200; // Shrinking effect duration in milliseconds
 function preload() {
   // Load images
   topImages = [
-    loadImage('images/rensdyr.png'),
     loadImage('images/nissepige.png'),
+    loadImage('images/rensdyr.png'),
     loadImage('images/julemand.png')
   ];
   
   bottomImages = [
-    loadImage('images/rensdyr_krop.png'),
+    loadImage('images/julemand_krop.png'),
     loadImage('images/nissepige_krop.png'),
-    loadImage('images/julemand_krop.png')
+    loadImage('images/rensdyr_krop.png')
   ];
   
   buttonImage = loadImage('images/pil.png'); // Load the image for the buttons
@@ -91,7 +91,8 @@ function handleInteraction(x, y) {
     x > topButtonX && x < topButtonX + buttonWidth &&
     y > topButtonY && y < topButtonY + buttonHeight
   ) {
-    topIndex = floor(random(topImages.length));
+    // Increment the index and wrap around using modulo
+    topIndex = (topIndex + 1) % topImages.length;
     triggerButtonShrink('top');
   }
   
@@ -100,10 +101,12 @@ function handleInteraction(x, y) {
     x > bottomButtonX && x < bottomButtonX + buttonWidth &&
     y > bottomButtonY && y < bottomButtonY + buttonHeight
   ) {
-    bottomIndex = floor(random(bottomImages.length));
+    // Increment the index and wrap around using modulo
+    bottomIndex = (bottomIndex + 1) % bottomImages.length;
     triggerButtonShrink('bottom');
   }
 }
+
 
 function triggerButtonShrink(button) {
   if (button === 'top') {
